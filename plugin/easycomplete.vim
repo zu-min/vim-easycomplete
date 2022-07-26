@@ -355,6 +355,14 @@ augroup easycomplete#PluginRegister
       \ 'command': 'solargraph'
       \ })
   au User easycomplete_default_plugin call easycomplete#RegisterSource({
+      \ 'name': 'rubylsp',
+      \ 'whitelist': easycomplete#FileTypes("rb", ["ruby"]),
+      \ 'completor': 'easycomplete#sources#rubylsp#completor',
+      \ 'constructor' :'easycomplete#sources#rubylsp#constructor',
+      \ 'gotodefinition': 'easycomplete#sources#rubylsp#GotoDefinition',
+      \ 'command': 'ruby-lsp'
+      \ })
+  au User easycomplete_default_plugin call easycomplete#RegisterSource({
       \ 'name': 'kt',
       \ 'whitelist': easycomplete#FileTypes("kt", ["kotlin"]),
       \ 'completor': 'easycomplete#sources#kotlin#completor',
